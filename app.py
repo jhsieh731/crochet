@@ -23,19 +23,22 @@ def open_connection():
   g.db = mysql.cursor()
 
 @app.after_request
-def close_connection():
-  g.db.close()
+def close_connection(response):
+  if g.db is not None:
+      g.db.close()
+  return response
 
 # !!! to run a CRUD operation: g.db.execute('SELECT (%s, %s) FROM ...', (var_1, var_2)) !!!
 # note: can also use dictionary as vars: g.db.execute("SELECT %var_name FROM ..."", {var_name: value})
 
 # db clean-up on server close
 def close_db():
+  print('Shutting down database connection')
   mysql.close()
 atexit.register(close_db)
 
 # routes
-@app.route("/", methods=[])
+@app.route("/")
 def home():
   return render_template('index.html')
 
