@@ -9,7 +9,6 @@ crochet
 └───app
 │   │   __init__.py
 |   |   app.py
-│   │   models.py
 │
 └───static
 │   └───css
