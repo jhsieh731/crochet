@@ -8,13 +8,13 @@ import os
 
 load_dotenv()
 
-app = Flask(__name__, template_folder='../templates')
+app = Flask(__name__, template_folder='../templates', static_folder='../static')
+app.debug = True
 
 # Configure the database URL
 drivername = "mysql+pymysql"
 port = 3306
 db_url = f"{drivername}://{os.getenv('USERNAME')}:{os.getenv('PASSWORD')}@{os.getenv('HOST')}:{port}/crochet"
-# print(db_url)
 
 # Configure Flask to use the database
 app.config["SQLALCHEMY_DATABASE_URI"] = db_url

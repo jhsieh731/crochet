@@ -1,0 +1,91 @@
+body {
+  margin: 0px;
+  font-family: 'Source Code Pro', monospace;
+}
+
+footer {
+  text-align: center;
+  margin: 0px;
+  padding: 10px;
+  background-color: tan;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* width: 100vw; */
+  height: 100px;
+  list-style-type: none;
+  background-color: tan;
+  margin: 0px;
+}
+
+.nav-item {
+  margin: auto;
+  float: left;
+  color: white;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  text-decoration: underline;
+  list-style-type: trad-chinese-informal;
+}
+
+.container {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 8em;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 3em;
+}
+
+.section {
+  /* width: 100vw; */
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.carousel {
+  position: relative;
+  margin: auto;
+  overflow: visible;
+  width: 80%;
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .subtitle {
+    font-size: 1em;
+  }
+
+  .navbar {
+    list-style-type: trad-chinese-informal;
+  }
+
+  .section {
+    flex-direction: column;
+  }
+}
